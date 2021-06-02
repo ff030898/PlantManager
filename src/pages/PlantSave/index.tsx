@@ -3,7 +3,7 @@ import { useRoute } from '@react-navigation/core';
 import { useNavigation } from '@react-navigation/native';
 import { format, isBefore } from 'date-fns';
 import React, { useState } from 'react';
-import { Alert, Image, Platform, Text, TouchableOpacity, View } from 'react-native';
+import { Alert, Image, Platform, ScrollView, Text, TouchableOpacity, View } from 'react-native';
 import { SvgFromUri } from 'react-native-svg';
 import waterdrop from '../../assets/waterdrop.png';
 import { Button } from '../../components/button';
@@ -62,6 +62,7 @@ export default function PlantSave() {
         }
     }
     return (
+        <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.container}>
         <View style={styles.container}>
             <View style={styles.plantInfo}>
                 <SvgFromUri uri={plant.photo} width={150} height={150} />
@@ -104,6 +105,7 @@ export default function PlantSave() {
                 </Button>
             </View>
         </View>
+        </ScrollView>
 
     )
 }
